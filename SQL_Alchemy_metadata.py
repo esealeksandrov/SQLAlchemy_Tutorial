@@ -145,7 +145,7 @@ class User(Base):
     name = Column(String(30))
     fullname = Column(String)
 
-    addresses = relationship("Address", back_populates="user")
+    #addresses = relationship("Address", back_populates="user")
 
     def __repr__(self):
         return f"User(id={self.id!r}, name={self.name!r}, fullname={self.fullname!r})"
@@ -157,7 +157,7 @@ class Address(Base):
     email_addres = Column(String, nullable=False)
     user_id = Column(Integer, ForeignKey("user_account.id")) #, nullable=False)
 
-    user = relationship("User", back_populates="address")
+    #user = relationship("User", back_populates="address")
 
     def __repr__(self):
         return f"Address(id={self.id!r}, email_addres={self.email_addres!r})"
@@ -189,4 +189,3 @@ from SQLAlchemy_Connect_Session import engine as other_engine
 some_table = Table("some_table", metadata_obj, autoload_with=other_engine)
 
 print(some_table, repr(some_table))
-

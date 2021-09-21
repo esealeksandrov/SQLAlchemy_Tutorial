@@ -1,0 +1,1 @@
+underline_for_header = "\n\n{:_^80s}"
